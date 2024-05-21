@@ -1,0 +1,6 @@
+[user]
+	email = matthewbegun@gmail.com
+	name = Matt Begun
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
