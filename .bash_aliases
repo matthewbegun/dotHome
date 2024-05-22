@@ -40,8 +40,8 @@ alias ch='chancellor'
 # ls
 alias ls='command ls -FH --color=auto '
 alias ll='ls -lA '
-# alias l='ll'
-alias l='lsd --oneline --group-dirs first --almost-all --classify --color=always --icon-theme=unicode --long '
+alias l='ll'
+# alias l='lsd --oneline --group-dirs first --almost-all --classify --color=always --icon-theme=unicode --long '
 # ...
 alias cd..='cd ..'
 alias ..='cd ..'
