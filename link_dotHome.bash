@@ -13,3 +13,8 @@ ln -s -f ~/_src/dotHome/.gitconfig ~/.gitconfig
 rm -rf ~/.local/bin
 mkcd ~/.local/bin
 ln -s ~/_src/dotHome/bin/* .
+
+# fish
+rm -rf ~/.config/fish
+mkcd ~/.config/fish
+ln -s ~/_src/dotHome/fish/* .
