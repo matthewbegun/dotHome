@@ -1,5 +1,8 @@
 # step 0 - copy .bashrc and .bash_aliases
 
+# passwordless sudo
+echo "Defaults:matth      !authenticate" | sudo tee /etc/sudoers.d/matth
+
 # system update
 up
 
@@ -14,4 +17,3 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 
 # node - nodjs LTS
 nvm install --lts
-
