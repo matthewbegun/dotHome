@@ -1,8 +1,8 @@
 #!/bin/bash
-## DOCKER
-alias d='docker '
-alias drun='docker run '
-alias dr='drun -it --rm '
+# ## DOCKER
+# alias d='docker '
+# alias drun='docker run '
+# alias dr='drun -it --rm '
 
 ## APPS
 # python3
@@ -10,27 +10,28 @@ alias python='python3'
 alias py='python'
 alias ipython='ipython3'
 alias ipy='ipython'
-# rstudio
-# alias rstudio='cmd.exe /C start microsoft-edge:http://localhost:8787; docker pull ghcr.io/rocker-org/verse:latest; docker run --name "ruh_roh" --rm -ti -e DISABLE_AUTH=true -p 8787:8787 -v rstudio:/home/rstudio -v r-site-library:/usr/local/lib/R/site-library -v "$(pwd):/home/rstudio/work" ghcr.io/rocker-org/verse:latest'
-# using shim in .local/bin instead
-alias rstudio='ruhroh'
-alias rr='ruhroh'
-# loco
-# alias loco='cmd.exe /C start microsoft-edge:http://localhost:8889; docker pull matthewbegun/loco:latest; docker run --rm -ti --name "local_loco" -e RESTARTABLE=yes -p 8889:8888/tcp -v jovyan:/home/jovyan -v "$(pwd):/home/jovyan/work" matthewbegun/loco:latest start-notebook.py --IdentityProvider.token='''
-# use a shim in .local/bin instead
-alias notbook='loco'
-alias jupy='loco'
-alias nb='loco'
-# Rscript
-alias Rscript='docker run --rm -ti -v "$(pwd)":/home/rstudio/work ghcr.io/rocker-org/devcontainer/r-ver:4 Rscript -e '
-# radian
-alias r='docker run --rm -ti -v "$(pwd)":/home/rstudio/work ghcr.io/rocker-org/devcontainer/r-ver:4 radian '
-# R
-alias R='docker run --rm -ti -v "$(pwd)":/home/rstudio/work ghcr.io/rocker-org/devcontainer/r-ver:4 R '
-# jq
-alias jq='docker run --rm -ti ghcr.io/jqlang/jq '
-# pandoc
-alias pandoc='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/extra'
+# # rstudio
+# # alias rstudio='cmd.exe /C start microsoft-edge:http://localhost:8787; docker pull ghcr.io/rocker-org/verse:latest; docker run --name "ruh_roh" --rm -ti -e DISABLE_AUTH=true -p 8787:8787 -v rstudio:/home/rstudio -v r-site-library:/usr/local/lib/R/site-library -v "$(pwd):/home/rstudio/work" ghcr.io/rocker-org/verse:latest'
+# # using shim in .local/bin instead
+# alias rstudio='ruhroh'
+# alias rr='ruhroh'
+# # loco
+# # alias loco='cmd.exe /C start microsoft-edge:http://localhost:8889; docker pull matthewbegun/loco:latest; docker run --rm -ti --name "local_loco" -e RESTARTABLE=yes -p 8889:8888/tcp -v jovyan:/home/jovyan -v "$(pwd):/home/jovyan/work" matthewbegun/loco:latest start-notebook.py --IdentityProvider.token='''
+# # use a shim in .local/bin instead
+# alias notbook='loco'
+# alias jupy='loco'
+# alias nb='loco'
+# # Rscript
+# alias Rscript='docker run --rm -ti -v "$(pwd)":/home/rstudio/work ghcr.io/rocker-org/devcontainer/r-ver:4 Rscript -e '
+# # radian
+# alias r='docker run --rm -ti -v "$(pwd)":/home/rstudio/work ghcr.io/rocker-org/devcontainer/r-ver:4 radian '
+# # R
+# alias R='docker run --rm -ti -v "$(pwd)":/home/rstudio/work ghcr.io/rocker-org/devcontainer/r-ver:4 R '
+# # jq
+# alias jq='docker run --rm -ti ghcr.io/jqlang/jq '
+# # pandoc
+# alias pandoc='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/extra'
+
 # chancellor-cli
 # alias chancellor='docker run --rm -it -v $(pwd):/home/pwd --workdir /home/pwd chancellor '
 # chancellor installed globally with npm
@@ -54,6 +55,7 @@ alias .5='cd ../../../../..'
 
 # install with apt-get
 alias apt-get="sudo apt-get"
+alias apt="sudo apt"
 alias update='sudo apt-get update && sudo apt-get upgrade -y'
 alias up="update"
 
@@ -83,3 +85,4 @@ alias take=mkcd
 
 # Stops ping after sending 4 ECHO_REQUEST packets.
 alias ping='ping -c 4'
+
