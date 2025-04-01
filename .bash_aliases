@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-# .bash_aliases
 ## APPS
 # python3
 alias python='python3'
