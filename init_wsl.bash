@@ -28,7 +28,6 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 # node - nodjs LTS
 nvm install --lts
 
-## R 
 # R using CRAN as Ubuntu Binaries https://eddelbuettel.github.io/r2u/ 
 curl -o- https://raw.githubusercontent.com/eddelbuettel/r2u/refs/heads/master/inst/scripts/add_cranapt_noble.sh | sudo bash
 # R packages for code
