@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+# .bash_aliases
 ## APPS
 # python3
 alias python='python3'
@@ -7,6 +9,9 @@ alias ipy='ipython'
 
 # chancellor-cli
 alias ch='chancellor'
+
+# R
+alias r="radian"
 
 ## SHELL
 # ls
