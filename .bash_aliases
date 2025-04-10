@@ -61,3 +61,7 @@ alias take=mkcd
 # Stops ping after sending 4 ECHO_REQUEST packets.
 alias ping='ping -c 4'
 
+# experimental git alias
+alias git='git.exe'
+alias gh='gh.exe'
+
