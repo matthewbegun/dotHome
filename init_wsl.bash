@@ -2,10 +2,8 @@
 # Automating future wsl installs (Ubuntu >= 24.04.2LTS)
 
 # step 0 - download .bashrc and .bash_aliases from github
-curl -o ~/.bashrc \
-  https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bashrc
-curl -o ~/.bash_aliases \
-  https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bash_aliases
+curl -o ~/.bashrc https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bashrc
+curl -o ~/.bash_aliases https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bash_aliases
 
 # passwordless sudo <-- not sure how interactive this will need to be on clean install
 echo 'Defaults:matth      !authenticate' | sudo tee /etc/sudoers.d/matth
