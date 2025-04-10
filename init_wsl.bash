@@ -7,7 +7,7 @@ curl -o ~/.bashrc \
 curl -o ~/.bash_aliases \
   https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bash_aliases
 
-# passwordless sudo
+# passwordless sudo <-- not sure if this works as intended
 echo "Defaults:matth      !authenticate" | sudo tee /etc/sudoers.d/matth
 
 # system update
@@ -38,5 +38,4 @@ pip install --break-system-packages -U radian
 # latex (this step is slow)
 apt install -y texlive-full
 # tex-fmt on debian but NOT ubuntu wtf
-wget -qO- https://github.com/WGUNDERWOOD/tex-fmt/releases/latest/download/tex-fmt-x86_64-linux.tar.gz | tar -xz -C ~/.local/bin
-
+wget -qO- https://github.com/WGUNDERWOOD/tex-fmt/releases/latest/download/tex-fmt-$(uname -p)-linux.tar.gz | tar -xz -C ~/.local/bin
