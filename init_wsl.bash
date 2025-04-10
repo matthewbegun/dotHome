@@ -7,8 +7,8 @@ curl -o ~/.bashrc \
 curl -o ~/.bash_aliases \
   https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bash_aliases
 
-# passwordless sudo <-- not sure if this works as intended
-echo "Defaults:matth      !authenticate" | sudo tee /etc/sudoers.d/matth
+# passwordless sudo <-- not sure how interactive this will need to be on clean install
+echo 'Defaults:matth      !authenticate' | sudo tee /etc/sudoers.d/matth
 
 # system update
 update
