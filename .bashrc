@@ -50,10 +50,10 @@ export LESS="FIRSX"
 # Set the default editor
 export EDITOR=nano
 export VISUAL=nano
-alias pico='edit'
-alias spico='sedit'
-alias nano='edit'
-alias snano='sedit'
+# alias pico='edit'
+# alias spico='sedit'
+# alias nano='edit'
+# alias snano='sedit'
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
