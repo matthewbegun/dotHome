@@ -12,7 +12,7 @@ echo 'Defaults:matth      !authenticate' | sudo tee /etc/sudoers.d/matth
 update
 
 # build tools
-apt install -y build-essential
+apt install -y build-essential gdb
 
 # python
 apt install -y python3 ipython3 python3-pip
