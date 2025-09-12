@@ -5,6 +5,16 @@
 ```
 wsl --install
 # REBOOT
+
 wsl --install archlinux 
+
 pacman -Syu
+
+passwd
+# set root password
+
+useradd -m matth
+passwd matth
+# set matth password
+
 ```
