@@ -62,6 +62,6 @@ alias take=mkcd
 alias ping='ping -c 4'
 
 # experimental git alias
-alias git='git.exe'
-alias gh='gh.exe'
+#alias git='git.exe'
+#alias gh='gh.exe'
 
