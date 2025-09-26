@@ -1,20 +1,6 @@
-~~`curl -o- https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/init_wsl.bash | bash`~~
+`curl -o- https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/init_wsl.bash | bash`
 
-# NEW HOTNESS
+or not *sigh*
+~~# NEW HOTNESS~~
 
-```
-wsl --install
-# REBOOT
 
-wsl --install archlinux 
-
-pacman -Syu
-
-passwd
-# set root password
-
-useradd -m matth
-passwd matth
-# set matth password
-
-```
