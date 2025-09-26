@@ -28,8 +28,11 @@ nvm install --lts
 
 # R using CRAN as Ubuntu Binaries https://eddelbuettel.github.io/r2u/ 
 curl -o- https://raw.githubusercontent.com/eddelbuettel/r2u/refs/heads/master/inst/scripts/add_cranapt_noble.sh | sudo bash
+# Create R user library folder
+mkdir -p ~/.R
 # R packages for code
-Rscript -e 'install.packages(c("languageserver", "tidyverse"))'
+apt install -y r-cran-tidyverse
+sudo Rscript -e 'install.packages(c("languageserver"))'
 # radian
 pip install --break-system-packages -U radian
 
