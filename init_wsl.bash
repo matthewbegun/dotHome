@@ -37,3 +37,9 @@ pip install --break-system-packages -U radian
 apt install -y texlive-full
 # tex-fmt on debian but NOT ubuntu wtf
 wget -qO- https://github.com/WGUNDERWOOD/tex-fmt/releases/latest/download/tex-fmt-$(uname -p)-linux.tar.gz | tar -xz -C ~/.local/bin
+
+# git stuff here
+git config --global core.autocrlf input # linux line endings in wsl
+git config --global user.name "Matthew Begun"
+git config --global user.email "matthew.begun@gmail.com"
+
