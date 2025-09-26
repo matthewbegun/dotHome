@@ -36,6 +36,9 @@ sudo Rscript -e 'install.packages(c("languageserver"))'
 # radian
 pip install --break-system-packages -U radian
 
+# julia
+curl -fsSL https://install.julialang.org | sh -s -- --yes
+
 # latex (this step is slow)
 apt install -y texlive-full
 # tex-fmt on debian but NOT ubuntu wtf
