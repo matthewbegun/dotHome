@@ -66,3 +66,9 @@ curl -o ~/.bash_aliases https://raw.githubusercontent.com/matthewbegun/dotHome/r
 # include new dotfiles
 source ~/.profile
 
+
+# get some useful scripts
+curl -o ~/.local/bin/remove_zone_identifiers.py https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/bin/remove_zone_identifiers.py
+# make them executable
+find ~/.local/bin -type f -exec chmod +x {} \;
+
