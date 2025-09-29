@@ -55,6 +55,9 @@ git config --global user.email "matthew.begun@gmail.com"
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 # apt install -y starship # Ubuntu 25+
 
+# podman - need to restart shell before this works properly with systemd
+sudo apt-get -y install podman
+
 # or just manually ensure working dotfiles
 curl -o ~/.bashrc https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bashrc
 curl -o ~/.bash_aliases https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bash_aliases
