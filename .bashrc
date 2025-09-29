@@ -141,9 +141,30 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
+# nvm and node
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/home/matth/.juliaup/bin:*)
+        ;;
+
+    *)
+        export PATH=/home/matth/.juliaup/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
+
+# rustup
+. "$HOME/.cargo/env"
+
 
 eval "$(starship init bash)"
