@@ -1,21 +1,12 @@
 #!/usr/bin/env bash
 # Automating future wsl installs (Ubuntu >= 24.04.2LTS)
 
-# step 0 - download .bashrc and .bash_aliases from github
-curl -o ~/.bashrc https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bashrc
-curl -o ~/.bash_aliases https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bash_aliases
-
-# include new dotfiles
-source ~/.bashrc
-source ~/.bash_aliases
-
 # passwordless sudo <-- not sure how interactive this will need to be on clean install
 echo 'Defaults:matth      !authenticate' | sudo tee /etc/sudoers.d/matth
 
 # system update
 sudo add-apt-repository -y universe
-update
-# sudo apt-get update && sudo apt-get upgrade -y
+sudo apt-get update && sudo apt-get upgrade -y
 
 # build tools
 apt install -y build-essential gdb
@@ -63,3 +54,12 @@ git config --global user.email "matthew.begun@gmail.com"
 # starship has to go last
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 # apt install -y starship # Ubuntu 25+
+
+# or just manually ensure working dotfiles
+curl -o ~/.bashrc https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bashrc
+curl -o ~/.bash_aliases https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bash_aliases
+
+# include new dotfiles
+source ~/.bashrc
+source ~/.bash_aliases
+
