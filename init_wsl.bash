@@ -13,7 +13,9 @@ source ~/.bash_aliases
 echo 'Defaults:matth      !authenticate' | sudo tee /etc/sudoers.d/matth
 
 # system update
+sudo add-apt-repository -y universe
 update
+# sudo apt-get update && sudo apt-get upgrade -y
 
 # build tools
 apt install -y build-essential gdb
@@ -22,7 +24,8 @@ apt install -y build-essential gdb
 apt install -y python3 ipython3 python3-pip
 
 # starship
-curl -sS https://starship.rs/install.sh | sh
+curl -sS https://starship.rs/install.sh | sh -s -- -y
+# apt install -y starship # Ubuntu 25+
 
 # node - nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
@@ -32,8 +35,6 @@ nvm install --lts
 
 # R using CRAN as Ubuntu Binaries https://eddelbuettel.github.io/r2u/ 
 curl -o- https://raw.githubusercontent.com/eddelbuettel/r2u/refs/heads/master/inst/scripts/add_cranapt_noble.sh | sudo bash
-# Create R user library folder
-mkdir -p ~/.R
 # R packages for code
 apt install -y r-cran-tidyverse
 sudo Rscript -e 'install.packages(c("languageserver"))'
@@ -52,4 +53,3 @@ wget -qO- https://github.com/WGUNDERWOOD/tex-fmt/releases/latest/download/tex-fm
 git config --global core.autocrlf input # linux line endings in wsl
 git config --global user.name "Matthew Begun"
 git config --global user.email "matthew.begun@gmail.com"
-
