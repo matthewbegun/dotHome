@@ -23,10 +23,6 @@ apt install -y build-essential gdb
 # python
 apt install -y python3 ipython3 python3-pip
 
-# starship
-curl -sS https://starship.rs/install.sh | sh -s -- -y
-# apt install -y starship # Ubuntu 25+
-
 # node - nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 
@@ -62,3 +58,8 @@ wget -qO- https://github.com/WGUNDERWOOD/tex-fmt/releases/latest/download/tex-fm
 git config --global core.autocrlf input # linux line endings in wsl
 git config --global user.name "Matthew Begun"
 git config --global user.email "matthew.begun@gmail.com"
+
+
+# starship has to go last
+curl -sS https://starship.rs/install.sh | sh -s -- -y
+# apt install -y starship # Ubuntu 25+
