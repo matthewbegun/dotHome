@@ -61,8 +61,8 @@ sudo apt-get -y install podman
 # or just manually ensure working dotfiles
 curl -o ~/.bashrc https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bashrc
 curl -o ~/.bash_aliases https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bash_aliases
+curl -o ~/.bash_aliases https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.profile
 
 # include new dotfiles
-source ~/.bashrc
-source ~/.bash_aliases
+source ~/.profile
 
