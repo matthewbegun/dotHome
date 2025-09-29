@@ -31,6 +31,9 @@ curl -sS https://starship.rs/install.sh | sh -s -- -y
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 
 # node - nodjs LTS
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install --lts
 
 # R using CRAN as Ubuntu Binaries https://eddelbuettel.github.io/r2u/ 
@@ -43,6 +46,12 @@ pip install --break-system-packages -U radian
 
 # julia
 curl -fsSL https://install.julialang.org | sh -s -- --yes
+
+# rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+mkdir -p ~/.local/share/bash-completion/completions
+rustup completions bash >> ~/.local/share/bash-completion/completions/rustup
+
 
 # latex (this step is slow)
 apt install -y texlive-full
