@@ -37,8 +37,7 @@ curl -fsSL https://install.julialang.org | sh -s -- --yes
 # rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 mkdir -p ~/.local/share/bash-completion/completions
-rustup completions bash >> ~/.local/share/bash-completion/completions/rustup
-
+~/.cargo/bin/rustup completions bash >> ~/.local/share/bash-completion/completions/rustup
 
 # latex (this step is slow)
 apt install -y texlive-full
@@ -50,13 +49,12 @@ git config --global core.autocrlf input # linux line endings in wsl
 git config --global user.name "Matthew Begun"
 git config --global user.email "matthew.begun@gmail.com"
 
+# podman - need to restart shell before this works properly with systemd
+sudo apt-get -y install podman
 
 # starship has to go last
 curl -sS https://starship.rs/install.sh | sh -s -- -y
 # apt install -y starship # Ubuntu 25+
-
-# podman - need to restart shell before this works properly with systemd
-sudo apt-get -y install podman
 
 # or just manually ensure working dotfiles
 curl -o ~/.bashrc https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/.bashrc
