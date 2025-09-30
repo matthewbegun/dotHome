@@ -8,6 +8,12 @@ echo 'Defaults:matth      !authenticate' | sudo tee /etc/sudoers.d/matth
 sudo add-apt-repository -y universe
 sudo apt-get update && sudo apt-get upgrade -y
 
+# git stuff here
+sudo apt-get install -y git gh
+git config --global core.autocrlf input # linux line endings in wsl
+git config --global user.name "Matthew Begun"
+git config --global user.email "matthew.begun@gmail.com"
+
 # build tools
 apt install -y build-essential gdb
 
@@ -43,11 +49,6 @@ mkdir -p ~/.local/share/bash-completion/completions
 apt install -y texlive-full
 # tex-fmt on debian but NOT ubuntu wtf
 wget -qO- https://github.com/WGUNDERWOOD/tex-fmt/releases/latest/download/tex-fmt-$(uname -p)-linux.tar.gz | tar -xz -C ~/.local/bin
-
-# git stuff here
-git config --global core.autocrlf input # linux line endings in wsl
-git config --global user.name "Matthew Begun"
-git config --global user.email "matthew.begun@gmail.com"
 
 # podman - need to restart shell before this works properly with systemd
 sudo apt-get -y install podman
