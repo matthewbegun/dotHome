@@ -30,6 +30,9 @@ shopt -s globstar
 # Matches filenames in a case-insensitive fashion when doing filename expansion.
 shopt -s nocaseglob
 
+# Automatically cd to directories
+shopt -s autocd
+
 # Ignore case in tab auto completion
 bind 'set completion-ignore-case on'
 # Do not autocomplete when accidentally pressing Tab on an empty line.
