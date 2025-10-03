@@ -23,14 +23,6 @@ sudo apt install -y python3 ipython3 python3-pip
 # pacman node
 sudo apt install -y nodejs npm
 
-# # node - nvm
-# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
-# # node - nodjs LTS
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-# nvm install --lts
-
 # R using CRAN as Ubuntu Binaries https://eddelbuettel.github.io/r2u/ 
 curl -o- https://raw.githubusercontent.com/eddelbuettel/r2u/refs/heads/master/inst/scripts/add_cranapt_noble.sh | sudo bash
 # R packages for code
@@ -46,6 +38,11 @@ curl -fsSL https://install.julialang.org | sh -s -- --yes
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 mkdir -p ~/.local/share/bash-completion/completions
 ~/.cargo/bin/rustup completions bash >> ~/.local/share/bash-completion/completions/rustup
+
+# uv python manager
+curl -LsSf https://astral.sh/uv/install.sh | sh
+~/.local/bin/uv generate-shell-completion bash >> ~/.local/share/bash-completion/completions/uv
+
 
 # latex (this step is slow)
 sudo apt install -y texlive-full
@@ -72,4 +69,3 @@ source ~/.profile
 curl -o ~/.local/bin/remove_zone_identifiers.py https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/bin/remove_zone_identifiers.py
 # make them executable
 find ~/.local/bin -type f -exec chmod +x {} \;
-
