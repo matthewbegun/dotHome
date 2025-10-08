@@ -9,7 +9,7 @@ apt install gh
 gh auth login
 
 # git
-touch ~/.gitignore
+#touch ~/.gitignore
 echo '**/.ipynb_checkpoints/*' >> .gitignore
 git config --global core.excludesfile ~/.gitignore
 
