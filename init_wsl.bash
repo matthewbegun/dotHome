@@ -68,5 +68,6 @@ source ~/.profile
 
 # get some useful scripts
 curl -o ~/.local/bin/remove_zone_identifiers.py https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/bin/remove_zone_identifiers.py
+curl -o ~/.local/bin/loco https://raw.githubusercontent.com/matthewbegun/loco/refs/heads/master/bin/loco
 # make them executable
 find ~/.local/bin -type f -exec chmod +x {} \;
