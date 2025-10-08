@@ -1,3 +1,9 @@
+From `pwsh` v>=7 :
+
+```
+& ([scriptblock]::Create((iwr 'https://to.loredo.me/Install-NerdFont.ps1')))
+```
+---
 This may or may not work unattended:
 
 `curl -o- https://raw.githubusercontent.com/matthewbegun/dotHome/refs/heads/main/init_wsl.bash | bash`
