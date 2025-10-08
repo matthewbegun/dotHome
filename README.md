@@ -10,6 +10,7 @@ gh auth login
 
 # git
 touch ~/.gitignore
+echo '**/.ipynb_checkpoints/*' >> .gitignore
 git config --global core.excludesfile ~/.gitignore
 
 # install vscode server and so on
