@@ -8,6 +8,10 @@ Current post setup actions:
 apt install gh
 gh auth login
 
+# git
+touch ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
+
 # install vscode server and so on
 code .
 
