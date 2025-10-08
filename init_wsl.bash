@@ -51,6 +51,7 @@ wget -qO- https://github.com/WGUNDERWOOD/tex-fmt/releases/latest/download/tex-fm
 
 # podman - need to restart shell before this works properly with systemd
 sudo apt install -y podman
+ln -s $(which podman) ~/.local/bin/docker
 
 # starship has to go last
 curl -sS https://starship.rs/install.sh | sh -s -- -y
