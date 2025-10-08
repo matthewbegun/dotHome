@@ -3,6 +3,13 @@ From `pwsh` v>=7 :
 ```
 & ([scriptblock]::Create((iwr 'https://to.loredo.me/Install-NerdFont.ps1')))
 ```
+
+Test the following to get unattended:
+```
+& ([scriptblock]::Create((iwr 'https://to.loredo.me/Install-NerdFont.ps1'))) -Confirm:$false -Name hack, heavy-data
+```
+
+
 ---
 This may or may not work unattended:
 
