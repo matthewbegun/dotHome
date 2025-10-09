@@ -1,12 +1,7 @@
-From `pwsh` v>=7 :
+Install favored nerd fonts from the `pwsh>=7`
 
 ```
-& ([scriptblock]::Create((iwr 'https://to.loredo.me/Install-NerdFont.ps1')))
-```
-
-Test the following to get unattended:
-```
-& ([scriptblock]::Create((iwr 'https://to.loredo.me/Install-NerdFont.ps1'))) -Confirm:$false -Name hack, heavy-data
+& ([scriptblock]::Create((iwr 'https://to.loredo.me/Install-NerdFont.ps1'))) -Confirm:$false -Name jetbrains-mono, fira-code, open-dyslexic
 ```
 
 
