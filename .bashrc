@@ -33,8 +33,12 @@ shopt -s nocaseglob
 # Automatically cd to directories
 shopt -s autocd
 
-# Ignore case in tab auto completion
+# Fix tab completion
 bind 'set completion-ignore-case on'
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
+bind '"\e[Z":menu-complete-backward'  # Optional: Shift+Tab to cycle backward
+
 # Do not autocomplete when accidentally pressing Tab on an empty line.
 shopt -s no_empty_cmd_completion
 
