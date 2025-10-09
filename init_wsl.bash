@@ -42,7 +42,7 @@ mkdir -p ~/.local/share/bash-completion/completions
 # uv python manager
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ~/.local/bin/uv generate-shell-completion bash >> ~/.local/share/bash-completion/completions/uv
-
+uv tool install ruff@latest
 
 # latex (this step is slow)
 sudo apt install -y texlive-full
