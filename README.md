@@ -1,9 +1,14 @@
 Install favored nerd fonts from the `pwsh>=7`
 
-```
+```pwsh
 & ([scriptblock]::Create((iwr 'https://to.loredo.me/Install-NerdFont.ps1'))) -Confirm:$false -Name jetbrains-mono, fira-code, open-dyslexic
 ```
 
+Install host tools with winget:
+
+```pwsh
+winget install -e --id RedHat.Podman-Desktop
+```
 
 ---
 This may or may not work unattended:
