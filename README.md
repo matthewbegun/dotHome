@@ -8,6 +8,7 @@ Install host tools with winget:
 
 ```pwsh
 winget install -e --id RedHat.Podman-Desktop
+winget install --id=GitHub.GitHubDesktop -e
 ```
 
 ---
