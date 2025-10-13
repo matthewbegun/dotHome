@@ -20,9 +20,13 @@ winget install -e --id GitHub.GitHubDesktop
 winget install -e --id Starship.Starship 
 'Invoke-Expression (&starship init powershell)' >> $PROFILE
 
+# R
+winget install -e --id RProject.R
+winget install -e --id Posit.RStudio
+winget install -e --id Posit.Quartogit
+
 # tools
 winget install --id Typst.Typst
-winget install --id Posit.Quartogit
 winget install --id=astral-sh.uv  -e
 
 ```
