@@ -4,11 +4,44 @@ Install favored nerd fonts from the `pwsh>=7`
 & ([scriptblock]::Create((iwr 'https://to.loredo.me/Install-NerdFont.ps1'))) -Confirm:$false -Name jetbrains-mono, fira-code, open-dyslexic
 ```
 
-Install host tools with winget:
+Install host tools with winget (you know what, just run an admin shell and do this, it will be easier):
 
 ```pwsh
+# containers
+winget install -e --id RedHat.Podman
 winget install -e --id RedHat.Podman-Desktop
-winget install --id=GitHub.GitHubDesktop -e
+
+# git
+winget install -e --id Git.Git --source winget
+winget install -e --id GitHub.cli
+winget install -e --id GitHub.GitHubDesktop 
+
+# shell
+winget install -e --id Starship.Starship 
+'Invoke-Expression (&starship init powershell)' >> $PROFILE
+
+# tools
+winget install --id Typst.Typst
+winget install --id Posit.Quartogit
+winget install --id=astral-sh.uv  -e
+
+```
+
+Configure commands:
+
+```pwsh
+# git
+git config --global user.name "Matthew Begun"
+git config --global user.email "matthew.begun@gmail.com"
+git config --global core.autocrlf true
+
+# gh
+gh auth login
+gh config set editor code
+
+# starship
+'Invoke-Expression (&starship init powershell)' >> $PROFILE
+
 ```
 
 ---
