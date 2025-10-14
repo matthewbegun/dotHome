@@ -30,11 +30,23 @@ winget install -e --id JohnMacFarlane.Pandoc
 winget install julia -s msstore --accept-source-agreements --accept-package-agreements
 
 # rust
-
+winget install Rustlang.Rustup
 
 # tools
 winget install -e --id Typst.Typst
 winget install -e --id astral-sh.uv
+winget install jqlang.jq
+winget install --id aria2.aria2
+
+# uv tools
+uv python install --default
+uv tool install howdoi
+uv tool install httpie
+uv tool install ipython
+uv tool install ruff
+uv tool install tldr
+uv tool install yq
+uv tool install --python 3.13 radian
 
 
 ```
@@ -50,6 +62,9 @@ git config --global core.autocrlf true
 # gh
 gh auth login
 gh config set editor code
+
+# quarto
+quarto install tinytex
 
 # starship
 'Invoke-Expression (&starship init powershell)' >> $PROFILE
