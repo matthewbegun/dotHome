@@ -14,7 +14,7 @@ winget install -e --id RedHat.Podman-Desktop
 # git
 winget install -e --id Git.Git --source winget
 winget install -e --id GitHub.cli
-winget install -e --id GitHub.GitHubDesktop 
+winget install -e --id GitHub.GitHubDesktop
 
 # shell
 winget install -e --id Starship.Starship 
@@ -24,10 +24,18 @@ winget install -e --id Starship.Starship
 winget install -e --id RProject.R
 winget install -e --id Posit.RStudio
 winget install -e --id Posit.Quarto
+winget install -e --id JohnMacFarlane.Pandoc
+
+# julia
+winget install julia -s msstore --accept-source-agreements --accept-package-agreements
+
+# rust
+
 
 # tools
-winget install --id Typst.Typst
-winget install --id=astral-sh.uv  -e
+winget install -e --id Typst.Typst
+winget install -e --id astral-sh.uv
+
 
 ```
 
