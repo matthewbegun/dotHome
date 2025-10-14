@@ -23,7 +23,7 @@ winget install -e --id Starship.Starship
 # R
 winget install -e --id RProject.R
 winget install -e --id Posit.RStudio
-winget install -e --id Posit.Quartogit
+winget install -e --id Posit.Quarto
 
 # tools
 winget install --id Typst.Typst
