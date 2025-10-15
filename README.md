@@ -66,6 +66,10 @@ gh config set editor code
 # quarto
 quarto install tinytex
 
+# winget
+Enable-ExperimentalFeature PSFeedbackProvider
+Install-PSResource -Name Microsoft.WinGet.CommandNotFound
+
 # starship
 'Invoke-Expression (&starship init powershell)' >> $PROFILE
 
