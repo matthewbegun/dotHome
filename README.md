@@ -59,8 +59,11 @@ git config --global user.name "Matthew Begun"
 git config --global user.email "matthew.begun@gmail.com"
 git config --global core.autocrlf true
 
-# PSCompletions library
-Install-Module PSCompletions -Scope CurrentUser -Repository PSGallery -Force
+# # PSCompletions library
+# Install-Module PSCompletions -Scope CurrentUser -Repository PSGallery -Force
+
+# poshgit
+PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
 
 # gh
 gh auth login
