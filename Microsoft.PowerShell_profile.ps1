@@ -12,6 +12,10 @@ Set-PSReadlineKeyHandler -Key Ctrl+d -Function DeleteCharOrExit
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
+Import-Module posh-git
+
+# Import-Module PSCompletions
+
 # Post hoc brackets for selection/line - note this is Alt+Shift+9
 Set-PSReadLineKeyHandler -Key 'Alt+Enter' `
     -BriefDescription Parenthesize-Selection `
@@ -96,3 +100,10 @@ Invoke-Expression (&starship init powershell)
 Import-Module -Name Microsoft.WinGet.CommandNotFound
 #f45873b3-b655-43a6-b217-97c00aa0db58
 #endregion
+
+# uv
+(& uv generate-shell-completion powershell) | Out-String | Invoke-Expression
+(& uvx --generate-shell-completion powershell) | Out-String | Invoke-Expression
+
+# github cli
+Invoke-Expression -Command $(gh completion -s powershell | Out-String)
