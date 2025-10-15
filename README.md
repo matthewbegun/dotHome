@@ -59,6 +59,9 @@ git config --global user.name "Matthew Begun"
 git config --global user.email "matthew.begun@gmail.com"
 git config --global core.autocrlf true
 
+# PSCompletions library
+Install-Module PSCompletions -Scope CurrentUser -Repository PSGallery -Force
+
 # gh
 gh auth login
 gh config set editor code
