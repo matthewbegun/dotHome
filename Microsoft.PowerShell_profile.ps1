@@ -1,0 +1,98 @@
+#!/usr/bin/env pwsh
+#region utf-8
+$PSDefaultParameterValues["Out-File:Encoding"] = "UTF8"
+$env:PYTHONIOENCODING = "utf-8"
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+#endregion
+
+#region PSReadline
+# Import-Module PSReadline
+Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
+Set-PSReadlineKeyHandler -Key Ctrl+d -Function DeleteCharOrExit
+Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+
+# Post hoc brackets for selection/line - note this is Alt+Shift+9
+Set-PSReadLineKeyHandler -Key 'Alt+Enter' `
+    -BriefDescription Parenthesize-Selection `
+    -LongDescription "Put parenthesis around the selection or entire line and move the cursor to after the closing parenthesis" `
+    -ScriptBlock {
+    # param($key, $arg)
+    $selectionStart = $null
+    $selectionLength = $null
+    [Microsoft.PowerShell.PSConsoleReadLine]::GetSelectionState([ref]$selectionStart, [ref]$selectionLength)
+    $line = $null
+    $cursor = $null
+    [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
+    if ($selectionStart -ne -1) {
+        [Microsoft.PowerShell.PSConsoleReadLine]::Replace($selectionStart, $selectionLength, '(' + $line.SubString($selectionStart, $selectionLength) + ')')
+        [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($selectionStart + $selectionLength + 2)
+    }
+    else {
+        [Microsoft.PowerShell.PSConsoleReadLine]::Replace(0, $line.Length, '(' + $line + ')')
+        [Microsoft.PowerShell.PSConsoleReadLine]::EndOfLine()
+    }
+}
+#endregion
+
+#region bashisms
+Set-Alias which Get-Command
+#endregion
+
+#region environment
+# prepend path with local bin
+Set-Item -Path Env:Path -Value ("$env:USERPROFILE/.local/bin;" + $Env:Path)
+#endregion
+
+#region etc
+# aria2c
+function dl {
+    # aria2c -j16 -s16 -x16 -k2M -c $args
+    aria2c.exe --continue --max-concurrent-downloads=16 --max-connection-per-server=16 --min-split-size=4M --split=16 $args
+
+}
+function mkcd ($path) {
+    New-Item -Type Directory -Path $path -Force
+    Set-Location $path
+}
+set-alias mkd mkcd
+set-alias take mkcd
+
+
+# navigation aliases
+function ... {
+    Set-Location ../..
+}
+function .... {
+    Set-Location ../../..
+}
+function ..... {
+    Set-Location ../../../..
+}
+function / {
+    Set-Location $HOME/_src
+}
+Set-Alias .. cd..
+Set-Alias \ cd\
+#endregion
+
+#region coding
+# r
+Remove-Item alias:\r
+set-alias r radian
+
+# python
+sal py python
+sal ipy ipython
+#endregion
+
+#region candy
+# starship
+Invoke-Expression (&starship init powershell)
+#endregion
+
+#f45873b3-b655-43a6-b217-97c00aa0db58 PowerToys CommandNotFound module
+
+Import-Module -Name Microsoft.WinGet.CommandNotFound
+#f45873b3-b655-43a6-b217-97c00aa0db58
+#endregion
