@@ -12,6 +12,25 @@ Set-PSReadlineKeyHandler -Key Ctrl+d -Function DeleteCharOrExit
 Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 
+Import-Module posh-git
+
+# Import-Module PSCompletions
+
+Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+        [Console]::InputEncoding = [Console]::OutputEncoding = $OutputEncoding = [System.Text.Utf8Encoding]::new()
+        $Local:word = $wordToComplete.Replace('"', '""')
+        $Local:ast = $commandAst.ToString().Replace('"', '""')
+        winget complete --word="$Local:word" --commandline "$Local:ast" --position $cursorPosition | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+        }
+}
+
+# include podman completions from ~/.config/
+if (Test-Path "$env:USERPROFILE/.config/podman_completer.ps1") {
+    . "$env:USERPROFILE/.config/podman_completer.ps1"
+}
+
 # Post hoc brackets for selection/line - note this is Alt+Shift+9
 Set-PSReadLineKeyHandler -Key 'Alt+Enter' `
     -BriefDescription Parenthesize-Selection `
@@ -96,3 +115,10 @@ Invoke-Expression (&starship init powershell)
 Import-Module -Name Microsoft.WinGet.CommandNotFound
 #f45873b3-b655-43a6-b217-97c00aa0db58
 #endregion
+
+# uv
+(& uv generate-shell-completion powershell) | Out-String | Invoke-Expression
+(& uvx --generate-shell-completion powershell) | Out-String | Invoke-Expression
+
+# github cli
+Invoke-Expression -Command $(gh completion -s powershell | Out-String)
