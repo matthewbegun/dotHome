@@ -18,7 +18,6 @@ winget install -e --id GitHub.GitHubDesktop
 
 # shell
 winget install -e --id Starship.Starship 
-'Invoke-Expression (&starship init powershell)' >> $PROFILE
 
 # R
 winget install -e --id RProject.R
@@ -37,6 +36,7 @@ winget install -e --id Typst.Typst
 winget install -e --id astral-sh.uv
 winget install jqlang.jq
 winget install --id aria2.aria2
+winget install --id junegunn.fzf
 
 # uv tools
 uv python install --default
@@ -76,8 +76,8 @@ quarto install tinytex
 Enable-ExperimentalFeature PSFeedbackProvider
 Install-PSResource -Name Microsoft.WinGet.CommandNotFound
 
-# starship
-'Invoke-Expression (&starship init powershell)' >> $PROFILE
+# dl PROFILE to local
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/matthewbegun/dotHome/main/Microsoft.PowerShell_profile.ps1' -OutFile $PROFILE -UseBasicParsing -Verbose
 
 ```
 
