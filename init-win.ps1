@@ -25,7 +25,7 @@ winstall RedHat.Podman
 winstall RedHat.Podman-Desktop
 
 # git
-winstall Git.Git --source winget
+winstall Git.Git "--source winget"
 winstall GitHub.cli
 winstall GitHub.GitHubDesktop
 
@@ -51,6 +51,9 @@ winstall astral-sh.uv
 winstall install jqlang.jq
 winstall aria2.aria2
 winstall junegunn.fzf
+
+# zed? positron?
+winstall ZedIndustries.Zed
 
 # experimental vscode install 
 winget install --id=Microsoft.VisualStudioCode -e --silent --accept-package-agreements --accept-source-agreements --override "/MERGETASKS='!runcode,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath'"
