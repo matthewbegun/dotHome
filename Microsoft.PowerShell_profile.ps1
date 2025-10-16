@@ -18,12 +18,12 @@ Import-Module posh-git
 
 Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
     param($wordToComplete, $commandAst, $cursorPosition)
-        [Console]::InputEncoding = [Console]::OutputEncoding = $OutputEncoding = [System.Text.Utf8Encoding]::new()
-        $Local:word = $wordToComplete.Replace('"', '""')
-        $Local:ast = $commandAst.ToString().Replace('"', '""')
-        winget complete --word="$Local:word" --commandline "$Local:ast" --position $cursorPosition | ForEach-Object {
-            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
-        }
+    [Console]::InputEncoding = [Console]::OutputEncoding = $OutputEncoding = [System.Text.Utf8Encoding]::new()
+    $Local:word = $wordToComplete.Replace('"', '""')
+    $Local:ast = $commandAst.ToString().Replace('"', '""')
+    winget complete --word="$Local:word" --commandline "$Local:ast" --position $cursorPosition | ForEach-Object {
+        [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+    }
 }
 
 # include podman completions from ~/.config/
@@ -51,6 +51,12 @@ Set-PSReadLineKeyHandler -Key 'Alt+Enter' `
         [Microsoft.PowerShell.PSConsoleReadLine]::Replace(0, $line.Length, '(' + $line + ')')
         [Microsoft.PowerShell.PSConsoleReadLine]::EndOfLine()
     }
+}
+
+function winstall($package, $extras="") {
+    $cmd = "winget install --id=$package -e --silent --accept-package-agreements --accept-source-agreements $extras"
+    Write-Host "Running: $cmd"
+    Invoke-Expression $cmd
 }
 #endregion
 
@@ -101,8 +107,8 @@ Remove-Item alias:\r
 set-alias r radian
 
 # python
-sal py python
-sal ipy ipython
+Set-Alias py python
+Set-Alias ipy ipython
 #endregion
 
 #region candy
