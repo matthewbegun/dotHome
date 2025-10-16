@@ -89,6 +89,11 @@ gh auth login
 gh config set editor code
 #endregion
 
+#region vscode
+# need to automate installing non-marketplace extensions somehow
+# code --install-extension https://github.com/mvuorre/vscode-zotero/releases/download/v0.2.0/zotero-0.2.0.vsix
+#endregion
+
 #region dotfiles
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/matthewbegun/dotHome/main/Microsoft.PowerShell_profile.ps1' -OutFile $PROFILE -UseBasicParsing -Verbose
 #endregion
