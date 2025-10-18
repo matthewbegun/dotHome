@@ -16,7 +16,6 @@ function winstall($package, $extras="") {
     Write-Host "Running: $cmd"
     Invoke-Expression $cmd
 }
-
 # node
 winstall OpenJS.NodeJS
 
@@ -51,6 +50,7 @@ winstall astral-sh.uv
 winstall install jqlang.jq
 winstall aria2.aria2
 winstall junegunn.fzf
+winstall Microsoft.Edit
 
 # zed? positron?
 winstall ZedIndustries.Zed
