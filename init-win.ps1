@@ -32,7 +32,7 @@ winstall GitHub.GitHubDesktop
 winstall Starship.Starship 
 
 # R
-winstall Postit.Rstudio
+winstall Posit.RStudio
 winstall Posit.Quarto
 winstall JohnMacFarlane.Pandoc
 
@@ -51,6 +51,7 @@ winstall install jqlang.jq
 winstall aria2.aria2
 winstall junegunn.fzf
 winstall Microsoft.Edit
+winstall Genivia.ugrep
 
 # zed? positron?
 winstall ZedIndustries.Zed
@@ -61,7 +62,7 @@ winget install --id=Microsoft.VisualStudioCode -e --silent --accept-package-agre
 #endregion
 
 #region uv
-uv python install --default
+uv python install 3.13 --default
 uv tool install howdoi
 uv tool install httpie
 uv tool install ipython
