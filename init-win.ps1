@@ -76,7 +76,13 @@ uv tool install --python 3.13 radian
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
 Enable-ExperimentalFeature PSFeedbackProvider
 Install-PSResource -Name Microsoft.WinGet.CommandNotFound
-#end region
+
+# or one completer to rule them all? <-- docs broken, bet it was all written with ai check back sometime
+# # Install from PowerShell Gallery (recommended)
+# Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted
+# Install-Module PSPredictor -Scope CurrentUser
+#endregion
+
 
 #region fonts
 & ([scriptblock]::Create((Invoke-WebRequest 'https://to.loredo.me/Install-NerdFont.ps1'))) -Confirm:$false -Name jetbrains-mono, fira-code, open-dyslexic
