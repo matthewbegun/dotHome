@@ -69,7 +69,7 @@ uv tool install ipython
 uv tool install ruff
 uv tool install tldr
 uv tool install yq
-uv tool install --python 3.13 radian
+uv tool install --python 3.13 --with ipython radian
 #endregion
 
 #region pwsh installs
