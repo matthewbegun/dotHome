@@ -106,4 +106,5 @@ gh config set editor code
 
 #region dotfiles
 Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/matthewbegun/dotHome/main/Microsoft.PowerShell_profile.ps1' -OutFile $PROFILE -UseBasicParsing -Verbose
+Invoke-WebRequest -Uri 'https://raw.githubusercontent.com/matthewbegun/dotHome/main/podman_completer.ps1' -OutFile "~/.config/podman_completer.ps1" -UseBasicParsing -Verbose
 #endregion
