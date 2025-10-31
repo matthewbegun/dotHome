@@ -37,6 +37,7 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 if (Test-Path "$env:USERPROFILE/.config/podman_completer.ps1") {
     . "$env:USERPROFILE/.config/podman_completer.ps1"
 }
+Set-Alias docker podman
 
 # Post hoc brackets for selection/line - note this is Alt+Shift+9
 Set-PSReadLineKeyHandler -Key 'Alt+Enter' `
