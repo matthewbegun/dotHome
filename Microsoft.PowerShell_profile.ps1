@@ -19,6 +19,9 @@ Import-Module posh-git
 (& uv generate-shell-completion powershell) | Out-String | Invoke-Expression
 (& uvx --generate-shell-completion powershell) | Out-String | Invoke-Expression
 
+# starship
+(& starship completions pwsh) | Out-String | Invoke-Expression
+
 # github cli
 Invoke-Expression -Command $(gh completion -s powershell | Out-String)
 
