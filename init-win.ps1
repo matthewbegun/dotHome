@@ -73,6 +73,12 @@ uv tool install --python 3.13 --with ipython radian
 #endregion
 
 #region pwsh installs
+if (Get-Command Set-PSRepository -ErrorAction SilentlyContinue) {
+Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+}
+if (Get-Command Set-PSResourceRepository -ErrorAction SilentlyContinue) {
+Set-PSResourceRepository -Name PSGallery -Trusted
+}
 PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
 Enable-ExperimentalFeature PSFeedbackProvider
 Install-PSResource -Name Microsoft.WinGet.CommandNotFound

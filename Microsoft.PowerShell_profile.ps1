@@ -110,6 +110,10 @@ function / {
 }
 Set-Alias .. cd..
 Set-Alias \ cd\
+
+# ugrep
+Set-Alias grep ugrep
+
 #endregion
 
 #region coding
