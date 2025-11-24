@@ -73,6 +73,14 @@ function winstall($package, $extras="") {
     Write-Host "Running: $cmd"
     Invoke-Expression $cmd
 }
+
+function up() {
+    $cmd = "sudo -E winget update --all --accept-package-agreements --accept-source-agreements --silent"
+    Write-Host "Running: $cmd"
+    Invoke-Expression $cmd
+}
+
+
 #endregion
 
 #region bashisms
