@@ -23,7 +23,7 @@ Import-Module posh-git
 (& rustup completions powershell) | Out-String | Invoke-Expression
 
 # starship
-(& starship completions pwsh) | Out-String | Invoke-Expression
+(& starship completions power-shell) | Out-String | Invoke-Expression
 
 # github cli
 Invoke-Expression -Command $(gh completion -s powershell | Out-String)
