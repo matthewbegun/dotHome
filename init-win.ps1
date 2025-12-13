@@ -3,58 +3,37 @@
 # Start-Process "wt.exe" -Verb RunAs -ArgumentList "new-tab pwsh"
 
 #region winget
-# TODO: standardise install formate.g. 
-# $package = "Posit.RStudio"; $extras=""
-# OR $extras = "--override '/MERGETASKS=\"!runcode,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath\"'"
-# OR $extras = "--source msstore"
-# winget install --id=$package $override --exact --silent --accept-package-agreements --accept-source-agreements  
-# TODO: consider looping through a list of (packages,extras)
 
-# winget install wrapper that accepts $package and $extra as inputs
+# winget install wrapper that accepts $package and $extra as inputs (put this in $PROFILE)
 function winstall($package, $extras="") {
     $cmd = "winget install --id=$package -e --silent --accept-package-agreements --accept-source-agreements $extras"
     Write-Host "Running: $cmd"
     Invoke-Expression $cmd
 }
-# node
-winstall OpenJS.NodeJS
 
-# containers
-winstall RedHat.Podman
-winstall RedHat.Podman-Desktop
-
-# git
-winstall Git.Git "--source winget"
-winstall GitHub.cli
-winstall GitHub.GitHubDesktop
-
-# shell
-winstall Starship.Starship 
-
-# R
-winstall Posit.RStudio
-winstall Posit.Quarto
-winstall JohnMacFarlane.Pandoc
-
-# julia
-# winget install julia -s msstore --accept-source-agreements --accept-package-agreements
-# msstore uses name, the ids are hashed
-winstall 9NJNWW8PVKMN "--source msstore"
-
-# rust
-winstall Rustlang.Rustup
-
-# tools
-winstall Typst.Typst
-winstall astral-sh.uv
-winstall install jqlang.jq
-winstall aria2.aria2
-winstall junegunn.fzf
-winstall Microsoft.Edit
-winstall Genivia.ugrep
-
-# zed? positron?
-winstall ZedIndustries.Zed
+# list of packages to install via winget
+$packages = @(
+    "9NJNWW8PVKMN",
+    "aria2.aria2",
+    "astral-sh.uv",
+    "Genivia.ugrep",
+    "Git.Git",
+    "GitHub.cli",
+    "GitHub.GitHubDesktop",
+    "jqlang.jq",
+    "JohnMacFarlane.Pandoc",
+    "junegunn.fzf",
+    "Microsoft.Edit",
+    "OpenJS.NodeJS",
+    "Posit.Quarto",
+    "Posit.RStudio",
+    "RedHat.Podman",
+    "RedHat.Podman-Desktop",
+    "Rustlang.Rustup",
+    "Starship.Starship",
+    "Typst.Typst",
+    "ZedIndustries.Zed"
+).ForeEach({ winstall $_ })
 
 # experimental vscode install 
 winget install --id=Microsoft.VisualStudioCode -e --silent --accept-package-agreements --accept-source-agreements --override "/MERGETASKS='!runcode,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath'"
@@ -70,6 +49,11 @@ uv tool install ruff
 uv tool install tldr
 uv tool install yq
 uv tool install --python 3.13 --with ipython radian
+#endregion
+
+#region quarto
+quarto install tinytex
+
 #endregion
 
 #region pwsh installs
@@ -107,7 +91,7 @@ gh config set editor code
 
 #region vscode
 # need to automate installing non-marketplace extensions somehow
-# code --install-extension https://github.com/mvuorre/vscode-zotero/releases/download/v0.2.0/zotero-0.2.0.vsix
+code --install-extension https://github.com/mvuorre/vscode-zotero/releases/download/v0.2.0/zotero-0.2.0.vsix
 #endregion
 
 #region dotfiles
