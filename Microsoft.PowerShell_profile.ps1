@@ -43,8 +43,11 @@ Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
 # if (Test-Path "$env:USERPROFILE/.config/podman_completer.ps1") {
 #     . "$env:USERPROFILE/.config/podman_completer.ps1"
 # }
-(&podman.exe completion powershell) | Out-String | Invoke-Expression
-Set-Alias docker podman
+# (&podman.exe completion powershell) | Out-String | Invoke-Expression
+# Set-Alias docker podman
+
+# docker
+Import-Module DockerCompletion
 
 # Post hoc brackets for selection/line - note this is Alt+Shift+9
 Set-PSReadLineKeyHandler -Key 'Alt+Enter' `
