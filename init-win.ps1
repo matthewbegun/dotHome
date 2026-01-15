@@ -13,30 +13,41 @@ function winstall($package, $extras="") {
 
 # list of packages to install via winget
 $packages = @(
-    "9NJNWW8PVKMN",
+    "Anthropic.ClaudeCode",
     "aria2.aria2",
     "astral-sh.uv",
+    "Casey.Just",
+    "DEVCOM.JetBrainsMonoNerdFont",
+    "DigitalScholar.Zotero",
+    "Docker.DockerDesktop",
     "Genivia.ugrep",
+    "Genymobile.scrcpy",
     "Git.Git",
     "GitHub.cli",
     "GitHub.GitHubDesktop",
-    "jqlang.jq",
     "JohnMacFarlane.Pandoc",
+    "jqlang.jq",
+    "Julialang.Juliaup",
     "junegunn.fzf",
-    "Microsoft.Edit",
+    "Logitech.Options",
+    "Microsoft.PowerShell",
+    "Microsoft.PowerToys",
+    "Microsoft.VisualStudioCode",
+    "Microsoft.WindowsTerminal",
     "OpenJS.NodeJS",
     "Posit.Quarto",
     "Posit.RStudio",
-    "RedHat.Podman",
-    "RedHat.Podman-Desktop",
+    "RProject.R",
     "Rustlang.Rustup",
     "Starship.Starship",
     "Typst.Typst",
+    "VideoLAN.VLC",
+    "WinDirStat.WinDirStat",
     "ZedIndustries.Zed"
-).ForeEach({ winstall $_ })
+).ForEach({ winstall $_ })
 
 # experimental vscode install 
-winget install --id=Microsoft.VisualStudioCode -e --silent --accept-package-agreements --accept-source-agreements --override "/MERGETASKS='!runcode,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath'"
+# winget install --id=Microsoft.VisualStudioCode -e --silent --accept-package-agreements --accept-source-agreements --override "/MERGETASKS='!runcode,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath'"
 
 #endregion
 
