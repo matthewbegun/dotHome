@@ -72,7 +72,7 @@ Set-PSReadLineKeyHandler -Key 'Alt+Enter' `
 }
 
 function winstall {
-    $cmd = "winget install -e --silent --accept-package-agreements --accept-source-agreements $args"
+    $cmd = "winget install -e --silent --accept-package-agreements --accept-source-agreements --scope user $args"
     Write-Host "Running: $cmd"
     Invoke-Expression $cmd
 }
