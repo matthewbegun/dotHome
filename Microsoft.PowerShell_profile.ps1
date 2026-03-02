@@ -71,17 +71,20 @@ Set-PSReadLineKeyHandler -Key 'Alt+Enter' `
     }
 }
 
-function winstall($package, $extras="") {
-    $cmd = "winget install --id=$package -e --silent --accept-package-agreements --accept-source-agreements $extras"
+function winstall {
+    $cmd = "winget install -e --silent --accept-package-agreements --accept-source-agreements $args"
     Write-Host "Running: $cmd"
     Invoke-Expression $cmd
 }
 
-function up() {
-    $cmd = "sudo -E winget update --all --accept-package-agreements --accept-source-agreements --silent"
+function up($package = "--all") {
+    $cmd = "winget update $package --accept-package-agreements --accept-source-agreements --silent"
     Write-Host "Running: $cmd"
     Invoke-Expression $cmd
 }
+
+function wup  { winget update }
+
 
 
 #endregion
