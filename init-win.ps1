@@ -41,6 +41,7 @@ $packages = @(
     "Posit.RStudio",
     "RProject.R",
     "Rustlang.Rustup",
+    "SlackTechnologies.Slack",
     "Starship.Starship",
     "Typst.Typst",
     "VideoLAN.VLC",
